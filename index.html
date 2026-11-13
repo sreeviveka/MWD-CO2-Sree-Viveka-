@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 and Promise Lab - Sree Viveka</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>ES6 and Promise Demo</h1>
+
+        <h3>JavaScript Lab Exercise</h3>
+
+        <p class="student">Name: Sree Viveka</p>
+
+        <p>
+            Click the button to start an asynchronous operation.
+        </p>
+
+        <button id="startBtn">Start Operation</button>
+
+        <div id="result">
+            Waiting to start...
+        </div>
+
+    </div>
+
+    <script>
+        // ES6: const declaration
+        const button = document.getElementById("startBtn");
+        const result = document.getElementById("result");
+
+        // ES6: Arrow function
+        const startOperation = () => {
+
+            // ES6: let declaration
+            let message = "Operation is in progress...";
+
+            result.textContent = message;
+            result.className = "loading";
+
+            button.disabled = true;
+
+            // Create a Promise
+            const myPromise = new Promise((resolve, reject) => {
+
+                setTimeout(() => {
+
+                    const success = true;
+
+                    if (success) {
+                        resolve("Operation completed successfully!");
+                    } else {
+                        reject("Operation failed!");
+                    }
+
+                }, 2000);
+
+            });
+
+            // Handle Promise success and failure
+            myPromise
+
+                .then((response) => {
+                    result.textContent = `${response}`;
+                    result.className = "success";
+                })
+
+                .catch((error) => {
+                    result.textContent = `Error: ${error}`;
+                    result.className = "error";
+                })
+
+                .finally(() => {
+                    button.disabled = false;
+                    console.log("Promise execution finished.");
+                });
+
+        };
+
+        // Arrow function as event handler
+        button.addEventListener("click", startOperation);
+
+    </script>
+
+</body>
+</html>

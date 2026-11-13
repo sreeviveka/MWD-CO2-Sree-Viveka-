@@ -1,0 +1,107 @@
+
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+    background-color: #f2f6fc;
+}
+
+/* Main container */
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    margin: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Main heading */
+h1 {
+    color: #1769aa;
+    margin-bottom: 10px;
+}
+
+/* Subheading */
+h3 {
+    color: #444;
+}
+
+/* Student name */
+.student {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Paragraph */
+p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Button styling */
+button {
+    padding: 12px 25px;
+    background-color: #1769aa;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Button hover */
+button:hover {
+    background-color: #0d477a;
+}
+
+/* Disabled button */
+button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+/* Result section */
+#result {
+    margin-top: 25px;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+/* Loading message */
+.loading {
+    color: #d98200;
+    background-color: #fff3cd;
+}
+
+/* Success message */
+.success {
+    color: #16803c;
+    background-color: #d4edda;
+}
+
+/* Error message */
+.error {
+    color: #c62828;
+    background-color: #f8d7da;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    body {
+        margin: 20px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
